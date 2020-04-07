@@ -18,12 +18,25 @@ class MainActivity : AppCompatActivity() {
             Log.d("LoginBtn", "LoginButton is clicked")
             val userInput =  emailEdit.text.toString()
 
-            //  입력한 아이디가 admin@tj.com 이면 관리자입니다! 라는 토스트 메세치 출력
-            if (userInput == "admin@tj.com") {
-                Toast.makeText(this, "관리자입니다.", Toast.LENGTH_SHORT).show()
-            } else {
-                val formattedStr = "입력한 아이디는 $userInput 입니다."
-                Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show()
+            //  입력한 아이디가 admin@tj.com 이면 관리자입니다! 라는 토스트 출력
+//            if (userInput == "admin@tj.com") {
+//                Toast.makeText(this, "관리자입니다.", Toast.LENGTH_SHORT).show()
+//            } else {
+//                val formattedStr = "입력한 아이디는 $userInput 입니다."
+//                Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show()
+//            }
+
+            // student > 학생입니다, parent > 학부모입니다, teacher > 교사입니다 토스트 출력
+
+            when (userInput) {
+                "admin@tj.com" -> { Toast.makeText(this, "관리자입니다.", Toast.LENGTH_SHORT).show()}
+                "student" -> { Toast.makeText(this, "학생입니다.", Toast.LENGTH_SHORT).show()}
+                "parent" -> { Toast.makeText(this, "학부모입니다.", Toast.LENGTH_SHORT).show()}
+                "teacher" -> { Toast.makeText(this, "교사입니다.", Toast.LENGTH_SHORT).show()}
+                else -> {
+                    val formattedStr = "입력한 아이디는 $userInput 입니다."
+                    Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
