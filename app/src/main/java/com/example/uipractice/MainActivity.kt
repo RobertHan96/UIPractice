@@ -16,7 +16,15 @@ class MainActivity : AppCompatActivity() {
         loginBtn.setOnClickListener {
 //            로그인 버튼이 눌렸을때 할일을 지정하는 부분, 클로저와 유사
             Log.d("LoginBtn", "LoginButton is clicked")
-            Toast.makeText(this, "Login button is clicked", Toast.LENGTH_SHORT).show()
+            val userInput =  emailEdit.text.toString()
+
+            //  입력한 아이디가 admin@tj.com 이면 관리자입니다! 라는 토스트 메세치 출력
+            if (userInput == "admin@tj.com") {
+                Toast.makeText(this, "관리자입니다.", Toast.LENGTH_SHORT).show()
+            } else {
+                val formattedStr = "입력한 아이디는 $userInput 입니다."
+                Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show()
+            }
         }
 
         loginBtn.setOnLongClickListener {
