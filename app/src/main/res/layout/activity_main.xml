@@ -5,20 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#A5A59A"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/idol1"
-        android:scaleType="fitXY"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/idol1"
+            android:scaleType="fitXY"
+            />
+
+    </LinearLayout>
 
     <TextView
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
     android:text="아이디"
+    android:gravity="left"
     android:textColor="#000000"
     android:textSize="24sp"
     />
@@ -33,6 +46,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="비밀번호"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -75,6 +89,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:text="관리자 모드" />
 
 
@@ -87,13 +102,33 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
         android:text="푸시 알림 동의"
         />
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-    />
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:text="Sign UP"
+            />
+
+        <!--            horizontal(가로) 레이아웃 안에서 크기 0인 객체의 비율을 1:1로 주었기 때문에감-->
+        <!--            해당 레이아웃내에서 두개의 객체가 크기를 1:1로 균등하게 가져-->
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Login"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>
